@@ -126,7 +126,7 @@ function divider(numbersArray) {
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
-var getRandomArbitrary = function () {
+var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
@@ -141,17 +141,15 @@ var getRandomArbitrary = function () {
 */
 
 //Code Here
+var numbers = [0, 3, 4, 5, 6, 7, 9, 14, 17, 24, 25, 26, 29, 30];
+
 function finder(arr) {
-  let random = getRandomArbitrary();
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] === random) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  const random = getRandomArbitrary();
+  console.log(random);
+  return arr.includes(random);
 }
 
+finder(numbers);
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
@@ -222,14 +220,12 @@ var numbers = [5, "9", 16, 19, "25", "34", 48];
 
 //Code Here
 function addTen(numbers) {
-  parseInt(numbers);
-  let newArr = [];
+  let plusTen = [];
   for (i = 0; i < numbers.length; i++) {
-    console.log(number)
+    plusTen.push(parseInt(numbers[i]) + 10);
   }
-  return newArr;
+  return plusTen;
 }
-
 
 ////////// PROBLEM 11 //////////
 
@@ -253,6 +249,13 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
+function longer(arr1, arr2) {
+  if ((arr1.length > arr2, length)) {
+    return arr1;
+  } else {
+    return arr2;
+  }
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -263,6 +266,15 @@ for (var i = 0; i < num2; i++) {
 */
 
 //Code Here
+function both(arr1, arr2) {
+  let sameNums = [];
+  for (i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      sameNums.push(arr1[i]);
+    }
+  }
+  return sameNums;
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -301,6 +313,7 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees = [tyler, cahlan, ryan, colt];
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -308,6 +321,8 @@ var colt = {
 */
 
 //Code Here
+const byeCahlan = devMountainEmployees.indexOf(cahlan);
+devMountainEmployees.splice(byeCahlan, 1);
 
 ////////// PROBLEM 13 //////////
 
@@ -317,7 +332,7 @@ var colt = {
 */
 
 //Code Here
-
+const users = [];
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
 
@@ -334,6 +349,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+const user2 = {
+  name: "jack",
+  email: "jack@gmail.com",
+  password: "jackspassword",
+  username: "jack"
+};
+const user3 = {
+  name: "kit",
+  email: "kit@gmail.com",
+  password: "kitspassword",
+  username: "kit"
+};
+
+users.push(user1, user2, user3);
 
 /*
   Now you have a very common data structure. 
@@ -346,6 +375,12 @@ var user1 = {
 */
 
 //Code Here
+for (i = 0; i < users.length; i++) {
+  if (users[i].email === "tylermcginnis33@gmail.com") {
+    const byeTyler = users.indexOf(users[i]);
+    users.splice(byeTyler, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
